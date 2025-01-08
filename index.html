@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucid Pixel - Premium Web Design</title>
+    <link rel="shortcut icon" href="./images/Lucid-Pixel-Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="globalStyles.css">
+    <meta name="description" content="At Lucid Pixel Web Design, we are more than just a web design company; we are passionate architects of digital experiences. Our mission is to empower businesses and individuals by creating captivating, functional, and user-centric websites that leave a lasting impact. We envision a digital world where every website tells a unique story, engages its audience effortlessly, and serves as a powerful tool for achieving goals, whether they are business growth, artistic expression, or community building."/>
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Lucid Pixel Design">
+    <meta property="og:description" content="At Lucid Pixel Web Design, we are more than just a web design company; we are passionate architects of digital experiences. Our mission is to empower businesses and individuals by creating captivating, functional, and user-centric websites that leave a lasting impact. We envision a digital world where every website tells a unique story, engages its audience effortlessly, and serves as a powerful tool for achieving goals, whether they are business growth, artistic expression, or community building.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/">
+    <meta property="og:image" content="./images/Lucid-Pixel-Logo.png">
+    <meta property="og:image:alt" content="Lucid Pixel Logo">
+
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LNZHMXWXC"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5LNZHMXWXC');
+    </script>
+
+    <style>
+
+        .title{
+            color: white;
+            font-size: 60px;
+            text-align: center;
+            margin: 25px;
+        }
+        .bodyText{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .square {
+            background-size: cover;
+            background-image: url("./images/laptop-agencies-consulting-website-development-companies.png");
+            margin: auto;
+            width: 80%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width: 767px) {
+        .title{
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 50px;
+            margin: 25px;
+        }
+
+        .bodyText{
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+        }
+
+        .container {
+            height: 50vh;
+        }
+
+        .square {
+            background-size: cover;
+            background-image: url("./images/laptop-agencies-consulting-website-development-companies.png");
+            margin: auto;
+            width: 80%;
+            height: 200px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        }
+
+        .bodyTextUnderlined{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+            text-decoration: underline;
+        }
+        .uiSeperator{
+            margin-top: 100px;
+            margin-bottom: 50px;
+            height: 2px;
+            width: 80%;
+            background: linear-gradient(to left, aquamarine, mediumpurple);;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        a {
+        text-decoration: none;
+        }
+
+        .squareFrame{
+            height: 100%;
+            width: 100%;
+        }
+
+        .fade-in-text {
+            opacity: 0;
+            transition: opacity 2s;
+
+        }
+
+        /* Style when the text should fade in */
+        .fade-in {
+            opacity: 1;
+        }
+
+        
+        .fade-in-text-fromleft{
+            opacity: 0;
+            transition: opacity 3s;
+            transform: translateX(100%);
+            filter: blur(5px);
+
+        }
+
+        @media screen and (max-width: 767px) {
+            .fade-in-text-fromleft {
+                transform: translateX(0%);
+
+            }
+        }
+
+
+
+
+        /* Style when the text should fade in */
+        .fade-in-fromleft{
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateX(0%);
+            transition: 1s;
+        }
+
+        .fade-in-text-fromright{
+            opacity: 0;
+            transition: opacity 3s;
+            transform: translateX(-100%);
+            filter: blur(5px);
+
+        }
+
+        /* Style when the text should fade in */
+        .fade-in-fromright{
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateX(0%);
+            transition: 1s;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap; /* This allows items to wrap to the next row */
+            margin-bottom: 20px;
+        }
+        
+
+        .card {
+            width: 200px;
+            height: 200px;
+            margin: 10px -60px; /* Add margin to create spacing between stacked items */
+            background-size: contain;
+            transform-origin: center;
+            transition:  0.5s ;
+            box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.5); /* Box shadow for the card */
+            transition-duration: 0.5s;
+            transform: perspective(800px) rotateY(50deg); /* Initial fold */
+            padding: 20px;
+            border: 2px solid transparent; /* Make the border transparent */
+            border-image: linear-gradient(to top right, purple, aquamarine); /* Define the gradient for the border */
+            border-image-slice: 1; /* Slice the border image evenly */
+        }
+
+        .card:hover {
+            transform: rotateY(0deg); /* Flat when hovered */
+            box-shadow: 2.5px 10px 10px rgba(0, 0, 0, 0.5);   
+            margin: 10px 30px;     
+        }
+
+        @media screen and (max-width: 767px) {
+            .card {
+                width: 100px;
+                height: 100px; /* Change width and height for mobile */
+            }
+        }
+
+        .card-with-text{
+            width: 500px;
+            height: 200px;
+            background-color: rgb(26, 26, 26);
+            border: 1px solid white;
+            margin: 0px 40px; /* Add margin to create spacing between stacked items */
+            transform-origin: center;
+            transition:  0.5s ;
+            box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.5); /* Box shadow for the card */
+            transition-duration: 0.5s;
+            border-radius: 20px;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        .compareContainer{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .insidecomparecontainer{
+            margin: 60px 20px;
+            text-align: center;
+        }
+        .websiteexamples{
+            height: 384px;
+            width: 512px;
+            margin: 20px;
+        }
+        #cards2 {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 100px;
+        padding: 0px;
+        }
+
+        .card2 {
+        border: 1px solid white;
+        border-radius: 40px;
+        display: block;
+        background-position: center;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        transition: scale 100ms;
+        }
+
+        .card2:hover + .body {
+            background-color: white;
+        }
+        
+        .card2 .card-front-image {
+        position: relative;
+        z-index: 2;
+        }
+
+        .card2 .card-image {
+        background-size: contain;
+        display: block;
+        width: clamp(300px, 20vw, 500px);
+        aspect-ratio: 2 / 3;
+        border-radius: 40px
+        }
+        .card2:hover{
+            border: 1px solid aqua;
+
+        }
+        @media(max-width: 1200px) {
+        body {    
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        #cards2 {
+            flex-direction: column; 
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .card2 .card-image {
+            width: 400px;    
+        }
+
+        .card2:hover{
+            border: 1px solid white;
+        }
+        }
+
+        @media(max-width: 600px) {
+        #cards2 {
+            gap: 2rem;
+        }
+        
+        .card2 {
+            width: 80%;  
+            height: 40%;  
+        }
+        
+        .card2 .card-image {
+            width: 100%;    
+        }
+        }
+
+        .PriceDisplayTop{
+            color: white;
+            text-decoration: underline;
+            font-size: 30px;
+            line-height: 40px;
+            margin: 0px;
+            width: 100%;
+            height: 10%;
+            text-align: center;
+        }
+        .PriceDisplayContent{
+            line-height: 40px;
+            margin: 0px;
+            width: 100%;
+            height: 80%;
+            text-align: center;
+        }
+
+        .PriceDisplayContentText{
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .PriceDisplayBottom{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            line-height: 40px;
+            margin: 0px;
+            width: 100%;
+            height: 10%;
+            text-align: center;
+            margin-bottom: 0;
+            margin-top: 0px;
+        }
+
+        .FAQContainer{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .FAQ{
+            cursor: pointer;
+            font-size: 15px;
+            height: 80px;
+            width: 80%;
+            border: 1px solid white;
+            box-sizing: border-box;
+            color: white;
+            background-color: rgba(27, 27, 27, 0.5);
+        }
+        .FAQ:nth-child(1){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(2){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(3){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(4){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(5){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(6){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(7){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(8){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(9){
+            transition-duration: 1200ms;
+        }
+        .fade-in-text-forFAQ{
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        .fade-in-forFAQ{
+            opacity: 1;
+            transform: translateX(0%);
+        }
+        .active1, .FAQ:hover {
+            background-color: rgba(200, 200, 200, 0.25);
+        }
+
+        /* Style the accordion panel. Note: hidden by default */
+        .panel {
+            text-align: left;
+            color: white;
+            background-color: rgba(27, 27, 27, 0.5);
+            border: 0px solid grey;
+            border-left: 1px solid grey;
+            border-right: 1px solid grey;
+            width: calc(60% - 1px);
+            display: block;
+          padding: 0 10%;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+        }
+
+        .FAQ:after {
+          content: '>'; /* Unicode character for "plus" sign (+) \02795 */
+          font-size: 20px;
+          color: #777;
+          float: right;
+          margin-left: 5px;
+        }
+
+        .active1:after {
+            font-size: 20px;
+          content: "⌄"; /* Unicode character for "minus" sign (-) \2796 */
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden;" id="my-scrollbar">
+    
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      
+<div id="blob"></div>
+<div id="blur"></div>
+
+
+    <div class="title">Lucid Pixel Web Design</div>
+
+    <div class="container">
+        <div class="square" id="foldableSquare">
+            <div class="squareFrame"></div>
+        </div>
+    </div>
+
+    <div class="fade-in-text title">
+        <p>First Impressions are Everything</p>
+    </div>
+
+    <div class="card-container">
+        <div class="fade-in-text-fromleft card" style="background-image: url(./images/example2.jpg)"> </div>
+        <div class="fade-in-text-fromleft card"  style="background-image: url(./images/example4.jpg)"> </div>
+        <div class="fade-in-text-fromleft card"  style="background-image: url(./images/example3.jpg)"> </div>
+        <div class="fade-in-text-fromleft card"  style="background-image: url(./images/example1.jpg)"> </div>
+    </div>
+    <div class="title"> These are all pictures of the same person</div>
+    <div class="bodyText"> But we get a different impression from each picture</div>
+    
+    <div class="uiSeperator"></div>
+
+    <div class="title fade-in-text-fromright">The Same Is true for websites</div>
+    <div class="bodyText fade-in-text-fromleft">If Your Website Is Bad, so will people's impression of your business</div>
+
+    <div class="uiSeperator"></div>
+
+    <!--<div class="title">Website Features</div>
+    <div>Features Will go here</div>
+
+    <div class="uiSeperator"></div>
+    -->
+
+
+    <!--<div class="title">Comparison:</div> 
+
+    <div class="compareContainer">
+        <div class="insidecomparecontainer fade-in-text-fromright">
+            <div class="title">Regular Websites:</div>
+            <iframe class="websiteexamples" src="""></iframe>
+        </div>
+        <div class="insidecomparecontainer fade-in-text-fromleft">
+            <div class="title">Our Websites:</div>
+            <iframe class="websiteexamples" src=""></iframe>
+        </div>
+    </div>
+        <div class="uiSeperator"></div>
+
+    -->
+    
+
+    <div class="title">Pricing</div>
+    <div id="cards2">
+        <div class="card2" >
+            <a href="/standardSite" class="card-front-image card-image" style="background-image: url(./images/green.jpg)" />
+                <div class="PriceDisplayTop">Standard</div>
+                <div class="PriceDisplayContent">
+                    <div class="PriceDisplayContentText">Animated and Dynamic Design</div>
+                    <div class="PriceDisplayContentText">Custom Design</div>
+                    <div class="PriceDisplayContentText">High resolution images</div>
+                    <div class="PriceDisplayContentText">SEO optimization</div>
+                    <div class="PriceDisplayContentText">Mobile & Desktop Compatibility</div>
+                    <div class="PriceDisplayContentText">3 Web Pages</div>
+                    <div class="PriceDisplayContentText">30 Day Satisfaction Guarentee</div>
+
+                </div>
+                <div class="PriceDisplayBottom">$1,000</div>
+            </a>
+        </div>
+        <div class="card2" >
+            <a href="/advancedSite" class="card-front-image card-image" style="background-image: url(./images/blue.jpg)" />
+                <div class="PriceDisplayTop">Advanced</div>
+                <div class="PriceDisplayContent">
+                    <div class="PriceDisplayContentText">Animated and Dynamic Design</div>
+                    <div class="PriceDisplayContentText">Custom Design</div>
+                    <div class="PriceDisplayContentText">High resolution images</div>
+                    <div class="PriceDisplayContentText">SEO optimization</div>
+                    <div class="PriceDisplayContentText">Mobile & Desktop Compatibility</div>
+                    <div class="PriceDisplayContentText">6 Web Pages</div>
+                    <div class="PriceDisplayContentText">30 Day Satisfaction Guarentee</div>
+                </div>
+                <div class="PriceDisplayBottom">$2,000</div>
+            </a>
+        </div>
+        <div class="card2" >
+            <a href="/premiumSite" class="card-front-image card-image" style="background-image: url(./images/purple.jpg)" />
+                <div class="PriceDisplayTop">Premium</div>
+                <div class="PriceDisplayContent">
+                    <div class="PriceDisplayContentText">Animated and Dynamic Design</div>
+                    <div class="PriceDisplayContentText">Custom Design</div>
+                    <div class="PriceDisplayContentText">High resolution images</div>
+                    <div class="PriceDisplayContentText">SEO optimization</div>
+                    <div class="PriceDisplayContentText">Mobile & Desktop Compatibility</div>
+                    <div class="PriceDisplayContentText">10 Web Pages</div>
+                    <div class="PriceDisplayContentText"> 30 Day Satisfaction Guarentee</div>
+                </div>
+                <div class="PriceDisplayBottom">$3,000</div>
+            </a>
+       </div>
+    </div>
+    <a href="/pricing" class="bodyTextUnderlined">See More>></a>
+
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Satisfaction Guarentee</div>
+    <div class="bodyText fade-in-text-fromleft">We provide a 100% satisfaction guarentee on all of our websites for 30 days. If you are unsatisfied for any reason within 30 days, we will give a full refund.</div>
+  
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Your Website Is The Face Of Your Business</div>
+    <br/>
+    <div class="bodyText fade-in-text-fromleft">In the digital age, your website is your business's first handshake with the world. At Lucid Pixel, we recognize that it's more than pixels—it's your brand's initial interaction with potential customers. A well-crafted website isn't just aesthetically pleasing; it's your competitive advantage. Let us create a compelling digital narrative that converts visitors into loyal customers, ensuring your online presence leaves a lasting impression.</div>
+    <br/>
+    <div class="title fade-in-text-fromright">Don't let your website have an ugly face</div>
+
+
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Only The Best</div>
+    <div class="bodyText fade-in-text-fromleft">All of our websites are handcrafted for each of our customers. We offer modern and clean designs to help you stand out from competators. We also offer website hosting where we can host, manage, and update your website, for only $10 a month.</div>
+
+
+
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Website hosting</div>
+    <div class="bodyText fade-in-text-fromleft">We provide website hosting for just $10 per month, although it's entirely optional. Alternatively, you can choose to self-host your website using a third-party provider. With our hosting service, you have the flexibility to cancel at any time. Additionally, our hosting package includes a domain name, or you can opt to use your existing domain, which we can connect to your website.</div>
+    <div class="uiSeperator"></div>
+
+    <div class="title">Frequently Asked Questions</div>
+    <div class="FAQContainer">
+        <button class="FAQ fade-in-text-forFAQ">Why Choose Us?</button>
+        <div class="panel" >
+            <p>We break free from the ordinary. While others deliver bland websites resembling newspapers and magazines, we offer fluid and creative designs that set you apart. Choose us for quality websites that lead, not follow.</p>
+        </div>
+        <button class="FAQ fade-in-text-forFAQ">How Long does it take to create a website?</button>
+        <div class="panel">
+            <p> The time required to create a website can vary based on its complexity and your specific needs. However, on average, our team typically completes websites in less than a week. Nevertheless, our standard policy is to ensure a comprehensive and high-quality result, which is why we set a standard policy of 2 weeks for most projects.</p>
+        </div>
+        <button class="FAQ fade-in-text-forFAQ">What is our satisfaction guarantee?</button>
+        <div class="panel">
+            <p>We offer a 100% money-back satisfaction guarantee for 30 days after your website is completed, demonstrating our confidence in our work. If you decide you don't want your website for any reason within this period, we'll refund the entire amount. Send Us an email to refund a purchase: refund@lucidpixeldesign.com</p>
+        </div>
+        <button class="FAQ fade-in-text-forFAQ">Are our prices and plans flexible?</button>
+        <div class="panel">
+            <p>Yes, our prices and plans are designed to be flexible and customizable to meet your specific needs. We understand that every project is unique, and our goal is to provide tailored solutions that work for you. Whether you require a basic website or a more complex web application, we have the flexibility to adjust our pricing and plans accordingly, ensuring that you get the best value for your investment. Our team is here to discuss your requirements and create a pricing and plan structure that aligns perfectly with your goals.</p>
+        </div>
+        <button class="FAQ fade-in-text-forFAQ">Can't AI just build me a website?</button>
+        <div class="panel" style="border-bottom: 1px solid grey;">
+            <p>While AI can create websites, our sites are more complex and visually appealing than the standard AI website creators on the market. We prioritize customization, ensuring your website is unique and tailored to your specific needs, setting us apart from automated solutions.</p>
+        </div>
+    </div>
+
+    <div class="uiSeperator"></div>
+
+    <div class="title fade-in-text-fromright">Contact Us</div>
+    <div class="bodyText fade-in-text-fromleft">If you have any questions, feel free to send us an email at:</div>
+    <a class="bodyText fade-in-text-fromleft" style="color: mediumpurple;" onmouseover="this.style.color='aquamarine'" onmouseout="this.style.color='mediumpurple'" href="mailto:ello@lucidpixeldesign.com">hello@lucidpixeldesign.com</a>
+
+    <br/><br/><br/><br/>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Webpages</h3>
+                <ul>
+                    <li><a class="footer-links" href="/">Home</a></li>
+                    <li><a class="footer-links" href="/pricing">Pricing</a></li>
+                    <li><a class="footer-links" href="/about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Terms and Policies</h3>
+                <ul>
+                    <li><a class="footer-links" href="/privacypolicy">Privacy Policy</a></li>
+                    <li><a class="footer-links" href="/TOS">Terms of Service</a></li>
+                    <li><a class="footer-links" href="/cookiepolicy">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a class="footer-links" href="https://twitter.com/lucidpixel492">Twitter</a></li>
+                    <li><a class="footer-links" href="https://www.instagram.com/lucidpixeldesign/">Instagram</a></li>
+                    <li><a class="footer-links" href="https://codepen.io/Lucid-Pixel-Design">CodePen</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+
+
+/* -- Scroll Ice effect -- */
+
+        
+        /* -- Glow effect -- */
+
+        const blob = document.getElementById("blob");
+
+        window.onpointermove = event => { 
+        const { clientX, clientY } = event;
+        
+        blob.animate({
+            left: `${clientX}px`,
+            top: `${Math.min(clientY + window.scrollY, document.documentElement.scrollHeight+150 - blob.clientHeight)}px`
+        }, { duration: 3000, fill: "forwards" });
+        }
+        
+        //for foldable square
+        const square = document.getElementById("foldableSquare");
+
+        window.addEventListener("scroll", () => {
+            // Calculate the fold angle based on the scroll position
+            const scrollValue = window.scrollY;
+            const foldAngle = Math.max((-scrollValue / 8), -45); // Limit fold angle to a maximum of 5 degrees
+
+            // Apply the folding effect using CSS transform
+            square.style.transform = `perspective(1000px) rotateX(${foldAngle}deg)`;
+        });
+
+        //for fade in text
+        document.addEventListener("DOMContentLoaded", function () {
+            const textElement = document.querySelector(".fade-in-text");
+
+            // Create an Intersection Observer
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        textElement.classList.add("fade-in");
+                    } else if (entry.intersectionRatio > 0) {
+                        textElement.classList.add("fade-in");
+                    } else {
+                        textElement.classList.remove("fade-in");
+                    }
+                });
+            });
+
+            // Observe the text element
+            observer.observe(textElement);
+        });
+
+        //for fade in text left
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all elements with the class "fade-in-text-fromleft"
+            const textElements = document.querySelectorAll(".fade-in-text-fromleft");
+
+            // Create an Intersection Observer for each element
+            textElements.forEach((textElement) => {
+                const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                    textElement.classList.add("fade-in-fromleft");
+                    } else if (entry.intersectionRatio > 0) {
+                    // Element is partially in viewport, you can choose to add the class here
+                    textElement.classList.add("fade-in-fromleft");
+                    } else {
+                    // Element is not in viewport, remove the class to reset the animation
+                    textElement.classList.remove("fade-in-fromleft");
+                    }
+                });
+                });
+
+                // Observe each text element
+                observer.observe(textElement);
+            });
+        });
+
+        //for fade in text right
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all elements with the class "fade-in-text-fromleft"
+            const textElements2 = document.querySelectorAll(".fade-in-text-fromright");
+
+            // Create an Intersection Observer for each element
+            textElements2.forEach((textElement) => {
+                const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                    textElement.classList.add("fade-in-fromright");
+                    } else if (entry.intersectionRatio > 0) {
+                    // Element is partially in viewport, you can choose to add the class here
+                    textElement.classList.add("fade-in-fromright");
+                    } else {
+                    // Element is not in viewport, remove the class to reset the animation
+                    textElement.classList.remove("fade-in-fromright");
+                    }
+                });
+                });
+
+                // Observe each text element
+                observer2.observe(textElement);
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all elements with the class "fade-in-text-fromleft"
+            const textElements2 = document.querySelectorAll(".fade-in-text-forFAQ");
+
+            // Create an Intersection Observer for each element
+            textElements2.forEach((textElement) => {
+                const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                    textElement.classList.add("fade-in-forFAQ");
+                    } else if (entry.intersectionRatio > 0) {
+                    // Element is partially in viewport, you can choose to add the class here
+                    textElement.classList.add("fade-in-forFAQ");
+                    } else {
+                    // Element is not in viewport, remove the class to reset the animation
+                    textElement.classList.remove("fade-in-forFAQ");
+                    }
+                });
+                });
+
+                // Observe each text element
+                observer2.observe(textElement);
+            });
+        });
+
+
+        //dorpdown for FAQ
+        var acc = document.getElementsByClassName("FAQ");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active1");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+
+    </script>
+
+    
+</body>
+</html>

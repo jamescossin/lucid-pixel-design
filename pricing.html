@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucid Pixel - Pricing</title>
+    <link rel="icon" href="./images/Lucid-Pixel-Logo.png">
+    <link rel="stylesheet" href="globalStyles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LNZHMXWXC"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5LNZHMXWXC');
+    </script>
+
+    <style>
+
+        .title{
+            color: white;
+            font-size: 60px;
+            text-align: center;
+            margin: 25px;
+        }
+        .bodyText{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+        }
+        .uiSeperator{
+            height: 2px;
+            width: 80%;
+            background: linear-gradient(to left, aquamarine, mediumpurple);;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        a {
+        text-decoration: none;
+        }
+        :root {
+        --blue-rgb: 127 255 212;
+        --green-rgb: 0 171 249;
+        --brown-rgb: 147 112 219;
+        }
+
+
+        body {
+        transition: background-color 1000ms;
+        }
+
+        body:has(.card[data-color="blue"]:hover) {
+        background-color: rgb(var(--blue-rgb) / 100000%);
+        }
+
+        body:has(.card[data-color="green"]:hover) {
+        background-color: rgb(var(--green-rgb) / 100000%);
+        }
+
+        body:has(.card[data-color="brown"]:hover) {
+        background-color: rgb(var(--brown-rgb) / 100000%);
+        }
+
+        #cards {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 100px;
+        padding: 0px;
+        }
+
+        .card {
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        transition: scale 100ms;
+        }
+
+        .card .card-front-image {
+        background-size: contain;
+        display: block;
+        width: clamp(300px, 20vw, 500px);
+        aspect-ratio: 2 / 3;
+        border-radius: clamp(0.5rem, 0.75vw, 2rem);
+        border: 1px solid white;
+        position: relative;
+        z-index: 2;
+        }
+
+        .card .card-image {
+        width: clamp(300px, 20vw, 500px);
+        aspect-ratio: 2 / 3;
+        border-radius: clamp(0.5rem, 0.75vw, 2rem);
+        }
+
+        .card-faders {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 1500ms;
+        pointer-events: none;
+        }
+
+        .card:hover .card-faders {
+        opacity: 1;
+        }
+
+        .card:active {
+        scale: 0.98;
+        }
+
+        .card-fader {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        }
+
+        .card-fader:nth-child(odd) {
+        animation: fade-left 3s linear infinite;
+        }
+
+        .card-fader:nth-child(even) {
+        animation: fade-right 3s linear infinite;
+        }
+
+        .card-fader:is(:nth-child(3), :nth-child(4)) {
+        animation-delay: 750ms;
+        }
+
+        .card-fader:is(:nth-child(5), :nth-child(6)) {
+        animation-delay: 1500ms;
+        }
+
+        .card-fader:is(:nth-child(7), :nth-child(8)) {
+        animation-delay: 2250ms;
+        }
+
+        @media(max-width: 1200px) {
+        body {    
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        #cards {
+            flex-direction: column; 
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .card .card-image {
+            width: 400px;    
+        }
+        }
+
+        @media(max-width: 600px) {
+        #cards {
+            gap: 2rem;
+        }
+        
+        .card {
+            width: 80%;    
+        }
+        
+        .card .card-image {
+            width: 100%;    
+        }
+        }
+
+        @keyframes fade-left {
+        from {
+            scale: 1;
+            translate: 0%;
+            opacity: 1;
+        }
+        
+        to {
+            scale: 0.8;
+            translate: -30%;
+            opacity: 0;
+        }
+        }
+
+        @keyframes fade-right {
+        from {
+            scale: 1;
+            translate: 0%;
+            opacity: 1;
+        }
+        
+        to {
+            scale: 0.8;
+            translate: 30%;
+            opacity: 0;
+        }
+        }
+        
+        .PriceDisplayTop{
+            color: white;
+            text-decoration: underline;
+            font-size: 30px;
+            line-height: 40px;
+            margin: 0px;
+            width: 100%;
+            height: 10%;
+            text-align: center;
+        }
+        .PriceDisplayContent{
+            line-height: 40px;
+            margin: 0px;
+            width: 100%;
+            height: 80%;
+            text-align: center;
+        }
+        .PriceDisplayContentText{
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .PriceDisplayBottom{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            line-height: 40px;
+            margin: 0px;
+            width: 100%;
+            height: 10%;
+            text-align: center;
+            margin-bottom: 0;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="/" >Home</a></li>
+                <li><a href="/pricing" class="active">Pricing</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+      
+
+<div id="blob"></div>
+<div id="blur"></div>
+
+<div class="title">Pricing</div>
+
+<div id="cards">
+    <div class="card" data-color="blue">
+    <a href="/standardSite" class="card-front-image card-image" style="background-image: url(./images/green.jpg)" />
+    <div class="PriceDisplayTop">Standard</div>
+    <div class="PriceDisplayContent">
+        <div class="PriceDisplayContentText">Animated and Dynamic Design</div>
+        <div class="PriceDisplayContentText">Custom Design</div>
+        <div class="PriceDisplayContentText">High resolution images</div>
+        <div class="PriceDisplayContentText">SEO optimization</div>
+        <div class="PriceDisplayContentText">Mobile & Desktop Compatibility</div>
+        <div class="PriceDisplayContentText">3 Web Pages</div>
+        <div class="PriceDisplayContentText">30 Day Satisfaction Guarentee</div>
+
+    </div>
+    <div class="PriceDisplayBottom">$1,000</div>
+    </a>
+      <div class="card-faders">
+        <img class="card-fader card-image" src="./images/green.jpg" />
+        <img class="card-fader card-image" src="./images/green.jpg" />
+        <img class="card-fader card-image" src="./images/green.jpg" />
+        <img class="card-fader card-image" src="./images/green.jpg" />
+        <img class="card-fader card-image" src="./images/green.jpg" />
+        <img class="card-fader card-image" src="./images/green.jpg" />
+        <img class="card-fader card-image" src="./images/green.jpg" />
+        <img class="card-fader card-image" src="./images/green.jpg" />
+      </div>
+    </div>
+    <div class="card" data-color="green">
+    <a href="/advancedSite" class="card-front-image card-image" style="background-image: url(./images/blue.jpg)" />
+    <div class="PriceDisplayTop">Advanced</div>
+    <div class="PriceDisplayContent">
+        <div class="PriceDisplayContentText">Animated and Dynamic Design</div>
+        <div class="PriceDisplayContentText">Custom Design</div>
+        <div class="PriceDisplayContentText">High resolution images</div>
+        <div class="PriceDisplayContentText">SEO optimization</div>
+        <div class="PriceDisplayContentText">Mobile & Desktop Compatibility</div>
+        <div class="PriceDisplayContentText">6 Web Pages</div>
+        <div class="PriceDisplayContentText">30 Day Satisfaction Guarentee</div>
+    </div>
+    <div class="PriceDisplayBottom">$2,000</div>
+    </a>
+        <div class="card-faders">
+        <img class="card-fader card-image" src="./images/blue.jpg" />
+        <img class="card-fader card-image" src="./images/blue.jpg" />
+        <img class="card-fader card-image" src="./images/blue.jpg" />
+        <img class="card-fader card-image" src="./images/blue.jpg" />
+        <img class="card-fader card-image" src="./images/blue.jpg" />
+        <img class="card-fader card-image" src="./images/blue.jpg" />
+        <img class="card-fader card-image" src="./images/blue.jpg" />
+        <img class="card-fader card-image" src="./images/blue.jpg" />
+      </div>
+    </div>
+    
+
+    <div class="card" data-color="brown">
+        <a href="/premiumSite" class="card-front-image card-image" style="background-image: url(./images/purple.jpg)" />
+        <div class="PriceDisplayTop">Premium</div>
+        <div class="PriceDisplayContent">
+            <div class="PriceDisplayContentText">Animated and Dynamic Design</div>
+            <div class="PriceDisplayContentText">Custom Design</div>
+            <div class="PriceDisplayContentText">High resolution images</div>
+            <div class="PriceDisplayContentText">SEO optimization</div>
+            <div class="PriceDisplayContentText">Mobile & Desktop Compatibility</div>
+            <div class="PriceDisplayContentText">10 Web Pages</div>
+            <div class="PriceDisplayContentText"> 30 Day Satisfaction Guarentee</div>
+        </div>
+        <div class="PriceDisplayBottom">$3,000</div>
+    </a>     
+        <div class="card-faders">
+        <img class="card-fader card-image" src="./images/purple.jpg" />
+        <img class="card-fader card-image" src="./images/purple.jpg" />
+        <img class="card-fader card-image" src="./images/purple.jpg" />
+        <img class="card-fader card-image" src="./images/purple.jpg" />
+        <img class="card-fader card-image" src="./images/purple.jpg" />
+        <img class="card-fader card-image" src="./images/purple.jpg" />
+        <img class="card-fader card-image" src="./images/purple.jpg" />
+        <img class="card-fader card-image" src="./images/purple.jpg" />
+      </div>
+    </div>
+  </div>
+
+  <div class="uiSeperator"></div>
+  <div class="title fade-in-text-fromright">Satisfaction Guarentee</div>
+  <div class="bodyText fade-in-text-fromleft">We provide a 100% satisfaction guarentee on all of our websites for 30 days. If you are unsatisfied for any reason within 30 days, we will give a full refund.</div>
+
+  <div class="uiSeperator"></div>
+  <div class="title">Any Questions?</div>
+  <div class="bodyText">If you have any questions about these plans, or if you feel none of these plans apply to you. Send us an email at:</div>
+  <a class="bodyText fade-in-text-fromleft" style="color: mediumpurple;" onmouseover="this.style.color='aquamarine'" onmouseout="this.style.color='mediumpurple'" href="mailto:hello@lucidpixeldesign.com">hello@lucidpixeldesign.com</a>
+
+
+    <br/><br/><br/><br/>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Webpages</h3>
+                <ul>
+                    <li><a class="footer-links" href="/">Home</a></li>
+                    <li><a class="footer-links" href="/pricing">Pricing</a></li>
+                    <li><a class="footer-links" href="/about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Terms and Policies</h3>
+                <ul>
+                    <li><a class="footer-links" href="/privacypolicy">Privacy Policy</a></li>
+                    <li><a class="footer-links" href="/TOS">Terms of Service</a></li>
+                    <li><a class="footer-links" href="/cookiepolicy">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a class="footer-links" href="https://twitter.com/lucidpixel492">Twitter</a></li>
+                    <li><a class="footer-links" href="https://www.instagram.com/lucidpixeldesign/">Instagram</a></li>
+                    <li><a class="footer-links" href="https://codepen.io/Lucid-Pixel-Design">CodePen</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+                /* -- Glow effect -- */
+
+                const blob = document.getElementById("blob");
+
+                window.onpointermove = event => { 
+                const { clientX, clientY } = event;
+
+                blob.animate({
+                    left: `${clientX}px`,
+                    top: `${Math.min(clientY + window.scrollY, document.documentElement.scrollHeight+150 - blob.clientHeight)}px`
+                }, { duration: 3000, fill: "forwards" });
+                }
+
+    </script>
+
+  
+
+</body>
+</html>
